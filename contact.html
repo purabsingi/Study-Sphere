@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us -- StudySphere</title>
+    <link rel="shortcut icon" href="Images/1.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f4f6;
+}
+
+.contact-box {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border-radius: 20px;
+    box-shadow: 8px 8px 16px #d1d1d1, -8px -8px 16px #ffffff;
+    text-align: center;
+    animation: fadeInBox 1.2s ease-in-out;
+}
+
+.header-block h1 {
+    font-size: 2.5rem;
+    color: #004d66;
+    margin-bottom: 10px;
+    animation: slideInTop 0.8s ease-out;
+}
+
+.unique-thought {
+    font-size: 1.2rem;
+    color: #6b6b6b;
+    font-style: italic;
+    margin-bottom: 30px;
+    animation: fadeInText 1s ease-in-out;
+}
+
+.details-block {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    animation: slideInBottom 1s ease-out;
+}
+
+.info-card {
+    flex: 1;
+    max-width: 300px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px #ccc, -5px -5px 10px #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 10px 10px 20px #ccc, -10px -10px 20px #ffffff;
+}
+
+.info-card img {
+    width: 48px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.info-card img:hover {
+    transform: rotate(360deg);
+}
+
+.info-card h3 {
+    font-size: 1.4rem;
+    color: #007acc;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.note-block {
+    margin-top: 40px;
+    font-size: 1rem;
+    color: #333;
+    font-style: italic;
+    animation: fadeInNote 1.5s ease-in-out;
+}
+
+@keyframes fadeInBox {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInTop {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInNote {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .details-block {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-card {
+        max-width: 80%;
+        margin: 15px 0;
+    }
+}
+
+</style>
+
+<body>
+
+
+    <div class="header">
+        <img class="logo" src="Images/1.png" alt="Logo">
+        <div class="header-right">
+          <a href="#home">Home</a>
+          <a href="std_material_page.html">Study Materials</a>
+           
+          <a href="about_us.html">About Us</a>
+          <a class="active" href="contact.html">Contact Us</a>
+
+
+
+        </div>
+      </div>
+
+
+
+      <section class="contact-box">
+        <div class="header-block">
+            <h1>Reach Out to StudySphere</h1>
+            <p class="unique-thought">"Unlocking potential, one resource at a time."</p>
+        </div>
+        <div class="details-block">
+            <a href="mailto:support@studysphere.com" class="info-card">
+                <img src="https://img.icons8.com/fluency/48/000000/email.png" alt="Email Icon">
+                <h3>Email Us</h3>
+                <p>support@studysphere.com</p>
+            </a>
+            <a href="https://forms.gle/KJQHDZXZ5k1QAJsB8" target="_blank" class="info-card">
+                <img src="https://img.icons8.com/fluency/48/000000/google-forms.png" alt="Google Forms Icon">
+                <h3>Contact Form</h3>
+                <p>Fill out our Contact Form</p>
+            </a>
+        </div>
+        <div class="note-block">
+            <p>Note: You will receive a response to your email or contact form submission within one week. We appreciate your patience.</p>
+        </div>
+    </section>
+
+
+    <footer class="matte-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="Images/2.png" alt="Company Logo">
+                <h2 class="footer-company-name">Study Sphere</h2>
+            </div>
+            <div class="footer-links">
+                <h3>Important Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="std_material_page.html">Study Materails</a></li>
+                    
+                    <li><a href="about_us.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@study-sphere.in</p>
+                <p><br></p>
+                <p>Address: Pratap Chowk, Sarafa Line, Lonar, dist:Buldhana Mahashtra</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Study-Sphere. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>

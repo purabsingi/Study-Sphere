@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Study Sphere</title>
+    <link rel="shortcut icon" href="Images/1.png" type="image/x-icon">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #f0f4f8, #dbe9f4);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            color: #333;
+            font-size: 28px;
+            margin: 0;
+        }
+        .product-select, .customer-info {
+            margin-bottom: 20px;
+        }
+        .product-select label, .customer-info label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        .product-select select, .customer-info input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .product-select select:focus, .customer-info input:focus {
+            border-color: #28a745;
+            box-shadow: 0 0 8px rgba(40, 167, 69, 0.2);
+            outline: none;
+        }
+        .product-info h2 {
+            margin: 0;
+            font-size: 26px;
+            color: #333;
+        }
+        .product-info p {
+            margin: 8px 0;
+            color: #555;
+        }
+        .btn-pay {
+            background-color: #28a745;
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-pay:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+        @media (max-width: 600px) {
+            .btn-pay {
+                font-size: 18px;
+                padding: 14px;
+            }
+        }
+        @media (max-width: 400px) {
+            .container {
+                padding: 15px;
+            }
+            .product-select select, .customer-info input {
+                font-size: 14px;
+            }
+        }
+
+    
+        .note-section {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .note-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333333;
+            text-align: center;
+        }
+        .note-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .note-item {
+            background-color: #e3f2fd;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            color: #1e88e5;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        .note-item:hover {
+            background-color: #bbdefb;
+        }
+        .note-item::before {
+            content: "•";
+            color: #1e88e5;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        @media (max-width: 480px) {
+            .note-section {
+                padding: 15px;
+            }
+            .note-title {
+                font-size: 20px;
+            }
+            .note-item {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+        
+    <div class="note-section">
+        <h2 class="note-title">Read Before Payment</h2>
+        <ul class="note-list">
+            <li class="note-item">Take a ScreenShot of Payment ID</li>
+            <li class="note-item">Check Email after payment</li>
+            <li class="note-item">Download The PDF Of Product / see on Email</li>
+            <li class="note-item">Payment is Not Refundable</li>
+        </ul>
+    </div>
+
+
+    <div class="container">
+        <div class="header">
+            <h1>Payment for Study Sphere</h1>
+        </div>
+        <div class="product-select">
+            <label for="product">Select Your Product</label>
+            <select id="product" name="product" required>
+                <option value="" disabled selected>Select a product</option>
+                <option value="Science10" data-price="28000" data-description="All chapters, with Answer sheets" data-link="https://drive.google.com/drive/folders/1uU_rHC_in5m6ys4_26XFVs0ZxV83N0dh?usp=sharing">Class 10th Science</option>
+                <option value="Maths10" data-price="25000" data-description="All chapters, with Answer sheets" data-link="https://drive.google.com/drive/folders/10XA7b8FMbVv0y1U8ODEdW43oDJKWojTi?usp=sharing">Class 10th Maths</option>
+                <option value="English10" data-price="22000" data-description="All chapters, with Answer sheets" data-link="https://drive.google.com/drive/folders/1nBTG5AdccHwIwGwjkI0vKuoKSSVT--_c?usp=sharing">Class 10th English</option>
+                <option value="SST10" data-price="26500" data-description="All chapters, with Answer sheets" data-link="https://drive.google.com/drive/folders/1Vsh0aRvgEVMokI_VNIW3FyxfQfv7nNQK?usp=sharing">Class 10th SST</option>
+                
+                <option value="" disabled selected>Select Your Product</option>
+                <option value="Science9" data-price="25000" data-description="All chapters, with Answer sheets" data-link="https://drive.google.com/drive/folders/1ptbxOVM6XnDW9TMb1va-yrZo1erLZV7b?usp=sharing">Class 9th Science</option>
+                <option value="Maths9" data-price="23000" data-description="All chapters, with Answer sheets" data-link="https://drive.google.com/drive/folders/1hPZDmJuN3TgQkd5xtCrckH4y9oAt7BZt?usp=sharing">Class 9th Maths</option>
+                <option value="English9" data-price="20000" data-description="All chapters, with Answer sheets" data-link="https://drive.google.com/drive/folders/1YQrfzdSIseC-Mgw8PeldsPRWXQgqGp3Y?usp=sharing">Class 9th English</option>
+                <option value="SST9" data-price="24000" data-description="All chapters, with Answer sheets" data-link="https://drive.google.com/drive/folders/1cMP9dSH5VzHQijPv09aOZcMfrDqESDng?usp=sharing">Class 9th SST</option>
+                
+                <option value="" disabled selected>Select Your Product</option>
+                <option value="State-prelims" data-price="27000" data-description="All chapters, with Answer sheets" data-link="https://drive.google.com/drive/folders/12rwVLIWSyngf8EPtZGz1OxXtgCUm81hN?usp=sharing">Class 10th State Board Prelims</option>
+                <option value="Cbse-prelims" data-price="30000" data-description="All chapters, with Answer sheets" data-link="https://drive.google.com/drive/folders/1C_bx1TOPb4Alrs_LuqYKaLnjhAm3ihvQ?usp=sharing">Class 10th CBSE Prelims</option>
+                
+                <option value="" disabled selected>Select Your Product</option>
+                <option value="imp-top" data-price="15000" data-description="All chapters Important Dates" data-link="https://drive.google.com/file/d/1koLW_gnspEkO1GHcgdj9jSkOXH1q6gTd/view?usp=sharing">10th SST Important Dates</option>
+                
+
+            </select>
+        </div>
+
+        <div class="product-info" id="product-info">
+            <!-- Product details will be shown here -->
+        </div>
+
+        <div class="customer-info">
+            <h3>Customer Information</h3>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <button class="btn-pay" id="rzp-button">Buy Now <i style='font-size:24px' class='far'>&#xf09d;</i></button>
+    </div>
+
+
+
+    <!-- Include Razorpay Checkout Script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <!-- Include EmailJS Script -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script src="payment.js"></script>
+</body>
+</html>

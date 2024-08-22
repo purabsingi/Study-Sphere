@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to StudySphere</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+.founder-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.founder-text {
+    max-width: 600px;
+    padding: 20px;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+.founder-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.founder-text .highlight {
+    color: #ff6600;
+}
+
+.founder-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.founder-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.founder-image {
+    max-width: 400px;
+    animation: fadeInRight 1s ease-in-out;
+    position: relative;
+}
+
+.founder-image img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+.founder-image::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background-color: #ff6600;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .founder-section {
+        flex-direction: column;
+    }
+
+    .founder-text {
+        text-align: center;
+    }
+
+    .founder-image {
+        margin-top: 20px;
+    }
+}
+
+
+
+.vision-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9aa33;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+    animation: slideIn 1s ease-out;
+}
+
+.vision-icon img {
+    width: 60px;
+    margin-right: 20px;
+}
+
+.vision-content h2 {
+    color: white;
+    margin: 0;
+}
+
+.vision-content p {
+    color: white;
+    margin-top: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .vision-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .vision-icon img {
+        margin-bottom: 15px;
+        margin-right: 0;
+    }
+}
+
+
+
+</style>
+
+<body>
+
+    <div class="header">
+        <img class="logo" src="Images/1.png" alt="Logo">
+        <div class="header-right">
+          <a href="index.html">Home</a>
+          <a href="std_material_page.html">Study Materials</a>
+           
+          <a class="active" href="about_us.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+
+
+
+        </div>
+      </div>
+
+      <hr>
+
+
+      <div class="vision-container">
+        <div class="vision-icon">
+            <img src="https://img.icons8.com/color/48/000000/target.png" alt="Target Icon">
+        </div>
+        <div class="vision-content">
+            <h2>Our Vision</h2>
+            <p>The main vision of StudySphere is to empower students by providing accessible, high-quality educational resources that foster learning and academic success. We aim to create a user-friendly platform where students can easily access tailored study materials and sample papers to excel in their educational journey.</p>
+        </div>
+    </div>
+
+
+    <section class="founder-section">
+        <div class="founder-text">
+            <h2>Our Founder & <span class="highlight">CEO</span></h2>
+            <h3>Purab Premkumar Singi</h3>
+            <p>Welcome to StudySphere! I’m Purab Premkumar Singi, the mind behind this platform. With a deep passion for coding, education, and design, I’ve created StudySphere as a space where students can access high-quality study materials and sample papers tailored to their needs.</p>
+            <p>From a young age, I’ve been captivated by the power of technology to solve real-world problems. Over the years, I’ve honed my skills in web development, graphic design, and photography, allowing me to build intuitive and visually appealing platforms. StudySphere is a culmination of my dedication to both education and technology, designed to provide students with the resources they need to excel.</p>
+            <p>StudySphere is more than just a website; it’s a learning companion. My goal is to make education accessible, engaging, and efficient. Whether you’re preparing for exams or seeking additional practice, you’ll find materials here that are carefully curated and easy to use.</p>
+            <p>Thank you for choosing StudySphere as your academic partner. I’m committed to continuously improving this platform to better serve your educational journey. Your success is my motivation!</p>
+        </div>
+        <div class="founder-image">
+            <img src="Images/IMG_8307.JPG" alt="Purab Premkumar Singi">
+        </div>
+    </section>
+
+    <footer class="matte-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="Images/2.png" alt="Company Logo">
+                <h2 class="footer-company-name">Study Sphere</h2>
+            </div>
+            <div class="footer-links">
+                <h3>Important Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="std_material_page.html">Study Materails</a></li>
+                    
+                    <li><a href="about_us.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@study-sphere.in</p>
+                <p><br></p>
+                <p>Address: Pratap Chowk, Sarafa Line, Lonar, dist:Buldhana Mahashtra</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Study-Sphere. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

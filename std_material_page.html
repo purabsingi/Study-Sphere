@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Materails --  Study Sphere</title>
+    <link rel="shortcut icon" href="Images/1.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+
+/* Category Buttons */
+.category-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #f4f4f4;
+    border: 2px solid #ddd;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+.btn.active {
+    background-color: #008cba;
+    color: #fff;
+}
+</style>
+<body>
+    
+    <div class="header">
+        <img class="logo" src="Images/1.png" alt="Logo">
+        <div class="header-right">
+          <a  href="index.html">Home</a>
+          <a class="active" href="#materials">Study Materials</a>
+           
+          <a href="about_us.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+
+
+
+        </div>
+      </div>
+
+      <hr>
+
+
+
+    <div class="filter-container">
+
+        <div class="category-buttons">
+            <button class="btn active" onclick="filterSelection('all')">All</button>
+            <button class="btn" onclick="filterSelection('prelims')">prelims (CBSE + State)</button>
+            <button class="btn" onclick="filterSelection('10th')">Class 10th</button>
+            <button class="btn" onclick="filterSelection('9th')">Class 9th</button>
+            <button class="btn" onclick="filterSelection('imp')">Important Topics</button>
+
+        </div>
+
+
+
+    <div class="product-container">
+        <div class="product-card prelims">
+            <div class="product-image">
+                <img src="Images/mock_vector.png" alt="Product 1">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Class 10th CBSE prelims</h2>
+                <p class="product-description">Simulate the exam experience with our expertly crafted prelims. With All Subject, All chapter and Answer Key.</p>
+                <p class="product-price">₹ 300</p>
+                <a href="payment.html" class="product-btn">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="product-card 10th imp">
+            <div class="product-image">
+                <img src="Images/imp-topic.png" alt="Product 2">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">10th SST Important Dates</h2>
+                <p class="product-description">Master Class 10 Social Science with our comprehensive guide to Important Dates. (All Chapter)</p>
+                <p class="product-price">₹ 150</p>
+                <a href="payment.html" class="product-btn">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="product-card 10th">
+            <div class="product-image">
+                <img src="Images/mock_10_vector.png" alt="Product 2">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">10th Science CBSE Test Series</h2>
+                <p class="product-description">Ace your board exams with our comprehensive test series. With All Subject, All chapter and Answer Key.</p>
+                <p class="product-price">₹ 280</p>
+                <a href="payment.html" class="product-btn">Buy Now</a>
+            </div>
+        </div>
+        <div class="product-card 10th">
+            <div class="product-image">
+                <img src="Images/maths_10_vector.webp" alt="Product 3">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">10th Maths CBSE Test Series</h2>
+                <p class="product-description">Get full coverage of all subjects chapter-wise tests and answer keys, ensuring a solid preparation for your maths exams.</p>
+                <p class="product-price">₹ 250</p>
+                <a href="payment.html" class="product-btn">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="product-card 10th">
+            <div class="product-image">
+                <img src="Images/mock_sst_vector.png" alt="Product 3">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">10th SST CBSE Test Series</h2>
+                <p class="product-description">Comprehensive practice series designed to cover all chapters of the 10th CBSE Social Science syllabus. Includes detailed answer keys for effective revision and self-assessment.</p>
+                <p class="product-price">₹ 265</p>
+                <a href="payment.html" class="product-btn">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="product-card 10th">
+            <div class="product-image">
+                <img src="Images/mock_eng_vector.png" alt="Product 3">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">10th English CBSE Test Series</h2>
+                <p class="product-description">Prepare effectively with our test series covering all chapters, complete with detailed answer keys for thorough self-assessment</p>
+                <p class="product-price">₹ 220</p>
+                <a href="payment.html" class="product-btn">Buy Now</a>
+            </div>
+        </div>
+
+
+
+
+        <div class="product-card 9th">
+            <div class="product-image">
+                <img src="Images/mock_10_vector.png" alt="Product 2">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">9th Science CBSE Test Series</h2>
+                <p class="product-description">Ace your board exams with our comprehensive test series. With All Subject, All chapter and Answer Key.</p>
+                <p class="product-price">₹ 250</p>
+                <a href="payment.html" class="product-btn">Buy Now</a>
+            </div>
+        </div>
+        <div class="product-card 9th">
+            <div class="product-image">
+                <img src="Images/maths_10_vector.webp" alt="Product 3">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">9th Maths CBSE Test Series</h2>
+                <p class="product-description">Get full coverage of all subjects chapter-wise tests and answer keys, ensuring a solid preparation for your maths exams.</p>
+                <p class="product-price">₹ 230</p>
+                <a href="payment.html" class="product-btn">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="product-card 9th">
+            <div class="product-image">
+                <img src="Images/mock_sst_vector.png" alt="Product 3">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">9th SST CBSE Test Series</h2>
+                <p class="product-description">Comprehensive practice series designed to cover all chapters of the 10th CBSE Social Science syllabus. Includes detailed answer keys for effective revision and self-assessment.</p>
+                <p class="product-price">₹ 240</p>
+                <a href="payment.html" class="product-btn">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="product-card 9th">
+            <div class="product-image">
+                <img src="Images/mock_eng_vector.png" alt="Product 3">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">9th English CBSE Test Series</h2>
+                <p class="product-description">Prepare effectively with our test series covering all chapters, complete with detailed answer keys for thorough self-assessment</p>
+                <p class="product-price">₹ 200</p>
+                <a href="payment.html" class="product-btn">Buy Now</a>
+            </div>
+        </div>
+
+
+
+        <div class="product-card prelims">
+            <div class="product-image">
+                <img src="Images/mock_vector.png" alt="Product 1">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Class 10th State prelims</h2>
+                <p class="product-description">Simulate the exam experience with our expertly crafted prelims. With All Subject, All chapter and Answer Key, English Medium.</p>
+                <p class="product-price">₹ 290</p>
+                <a href="payment.html" class="product-btn">Buy Now</a>
+            </div>
+        </div>
+
+
+    </div>
+
+    
+    <footer class="matte-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="Images/2.png" alt="Company Logo">
+                <h2 class="footer-company-name">Study Sphere</h2>
+            </div>
+            <div class="footer-links">
+                <h3>Important Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="std_material_page.html">Study Materails</a></li>
+                    
+                    <li><a href="about_us.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@study-sphere.in</p>
+                <p><br></p>
+                <p>Address: Pratap Chowk, Sarafa Line, Lonar, dist:Buldhana Mahashtra</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Study-Sphere. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

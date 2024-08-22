@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Study Sphere</title>
+    <link rel="shortcut icon" href="Images/1.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #f0f4f8, #dbe9f4);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            color: #333;
+            font-size: 28px;
+            margin: 0;
+        }
+        .product-select, .customer-info {
+            margin-bottom: 20px;
+        }
+        .product-select label, .customer-info label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        .product-select select, .customer-info input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .product-select select:focus, .customer-info input:focus {
+            border-color: #28a745;
+            box-shadow: 0 0 8px rgba(40, 167, 69, 0.2);
+            outline: none;
+        }
+        .product-info h2 {
+            margin: 0;
+            font-size: 26px;
+            color: #333;
+        }
+        .product-info p {
+            margin: 8px 0;
+            color: #555;
+        }
+        .btn-pay {
+            background-color: #28a745;
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-pay:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+        @media (max-width: 600px) {
+            .btn-pay {
+                font-size: 18px;
+                padding: 14px;
+            }
+        }
+        @media (max-width: 400px) {
+            .container {
+                padding: 15px;
+            }
+            .product-select select, .customer-info input {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Payment for Study Sphere</h1>
+        </div>
+        <div class="product-select">
+            <label for="product">Select Product</label>
+            <select id="product" name="product" required>
+                <option value="" disabled selected>Select a product</option>
+                <option value="Science10" data-price="50000" data-description="Description of Product 1" data-link="https://drive.google.com/drive/folders/your-google-drive-folder-id-1">Product 1</option>
+                <option value="Maths10" data-price="75000" data-description="Description of Product 2" data-link="https://drive.google.com/drive/folders/your-google-drive-folder-id-2">Product 2</option>
+                <option value="English10" data-price="100000" data-description="Description of Product 3" data-link="https://drive.google.com/drive/folders/your-google-drive-folder-id-3">Product 3</option>
+                <option value="SST10" data-price="100000" data-description="Description of Product 3" data-link="https://drive.google.com/drive/folders/your-google-drive-folder-id-3">Product 3</option>
+
+            </select>
+        </div>
+
+        <div class="product-info" id="product-info">
+            <!-- Product details will be shown here -->
+        </div>
+
+        <div class="customer-info">
+            <h3>Customer Information</h3>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <button class="btn-pay" id="rzp-button">Pay with Razorpay</button>
+    </div>
+
+    <!-- Include Razorpay Checkout Script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <!-- Include EmailJS Script -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+    <script>
+        emailjs.init("WQ4WgEngySo64rSK5");
+
+        function updateProductInfo() {
+            const productSelect = document.getElementById('product');
+            const productInfo = document.getElementById('product-info');
+            const selectedOption = productSelect.options[productSelect.selectedIndex];
+            const price = selectedOption.getAttribute('data-price');
+            const description = selectedOption.getAttribute('data-description');
+            
+            productInfo.innerHTML = `
+                <h2>${selectedOption.text}</h2>
+                <p>${description}</p>
+                <p><strong>Price: ₹${(price / 100).toFixed(2)}</strong></p>
+            `;
+        }
+
+        document.getElementById('product').addEventListener('change', updateProductInfo);
+        updateProductInfo(); // Initialize with the default selection
+
+        var options = {
+            "key": "rzp_test_8uWq3JvB51nowt", // Enter the Key ID generated from the Dashboard
+            "amount": function() {
+                const productSelect = document.getElementById('product');
+                const selectedOption = productSelect.options[productSelect.selectedIndex];
+                return selectedOption.getAttribute('data-price'); // Amount in currency subunits
+            }(),
+            "currency": "INR",
+            "name": "Study Sphere",
+            "description": function() {
+                const productSelect = document.getElementById('product');
+                const selectedOption = productSelect.options[productSelect.selectedIndex];
+                return selectedOption.getAttribute('data-description');
+            }(),
+            "image": "Images/1.png",
+            "handler": function (response) {
+                alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+
+                // Redirect to Google Drive link in a new page
+                const productLink = document.getElementById('product').selectedOptions[0].getAttribute('data-link');
+                window.open(productLink, '_blank');
+
+                // Send customer info via EmailJS
+                emailjs.send("service_uh3rxtd", "template_s2is7ev", {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    payment_id: response.razorpay_payment_id,
+                    company_info: "Study Sphere",
+                    product_link: productLink
+                }).then(function(response) {
+                    console.log('Email sent successfully:', response);
+                }, function(error) {
+                    console.log('Failed to send email:', error);
+                });
+            },
+            "prefill": {
+                "name": "",
+                "email": "",
+                "contact": ""
+            },
+            "theme": {
+                "color": "#28a745"
+            }
+        };
+
+        document.getElementById('rzp-button').onclick = function(e){
+            options.amount = document.getElementById('product').selectedOptions[0].getAttribute('data-price');
+            options.description = document.getElementById('product').selectedOptions[0].getAttribute('data-description');
+            
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+            e.preventDefault();
+        }
+    </script>
+</body>
+</html>
+
+
+mummy pan - IIBPS6937R
