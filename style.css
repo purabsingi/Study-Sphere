@@ -60,6 +60,33 @@ body {
   }
 }
 
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#search-input {
+    padding: 10px;
+    width: 50%;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.search-container .btn {
+    padding: 10px 20px;
+    background-color: #008cba;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-container .btn:hover {
+    background-color: #005f8a;
+}
+
+
 
 
 /* Container */
@@ -246,7 +273,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 80px;
     padding: 20px;
     background-color: #f1f1f1;
 }

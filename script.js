@@ -23,3 +23,4 @@ function filterSelection(category) {
 
 // Default filter
 filterSelection('all');
+
